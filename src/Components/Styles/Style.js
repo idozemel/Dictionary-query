@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
 
+//CSS Styling components with emotion.
+
 export const Card = styled.div`
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -51,4 +53,3 @@ export const Label = styled.label`
   font-weight: bold;
 `;
 
-//export default Card;

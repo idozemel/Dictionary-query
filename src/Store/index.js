@@ -1,16 +1,20 @@
 import { runInAction, makeAutoObservable } from "mobx";
 
 class Store {
+  //Variables for query answers
   letter = "";
   word = "";
   count = "";
   case = "a";
   conjuct = "";
+  //Show answers after we ask them.
   flagA = false;
   flagB = false;
+  //Switching pages of the dictionary
   min = 0;
   max = 50;
   page = 1;
+  //Select tag, query+switchcase
   options = [
     {
       label: "How many words start with the letter",
@@ -30,6 +34,7 @@ class Store {
     makeAutoObservable(this);
   }
 
+  //---------------Setters---------------
   setLetter = (letter) => {
     this.letter = letter;
   };
@@ -66,6 +71,7 @@ class Store {
   setPage = (page) => {
     this.page = page;
   };
+
   runAction = (result) => {
     runInAction(() => {
       this.setCount(result);
@@ -74,6 +80,8 @@ class Store {
   };
 
   choosePage = () => {
+    //A function to run between pages to see all words.
+    // each page contains 50words
     if (this.min === 0 && this.page === 1) {
       this.setMin(50);
       this.setMax(101);
@@ -129,7 +137,7 @@ class Store {
     }
   };
 
-  allFuncs = (option, words) => {
+  allFuncs = (option, words) => { //Choosing the right function from "select" tag.
     if (typeof option == "undefined") {
       return;
     }

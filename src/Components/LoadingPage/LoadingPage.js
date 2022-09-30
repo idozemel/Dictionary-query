@@ -1,8 +1,8 @@
 import React from "react";
 import Store from "../../Store";
 import { observer } from "mobx-react";
-import CustomForm from "../../Components/Custom/CustomForm";
-import CustomList from "../../Components/Custom/CustomList";
+import CustomForm from "../Custom/CustomForm";
+import CustomList from "../Custom/CustomList";
 import {
   Button,
   Card,
@@ -10,12 +10,12 @@ import {
   Input,
   Label,
   P,
-} from "../../Components/Styles/Style";
+} from "../Styles/Style";
 var words = require("an-array-of-english-words"); // an array of english words :) total words 274937
 
 const LoadingPage = () => {
   return (
-    <Card>
+    <Card> 
       <CustomForm
         onSubmit={(e) => {
           e.preventDefault();
@@ -47,7 +47,7 @@ const LoadingPage = () => {
       </form>
       {Store.flagB && (
         <P>
-          The number of conjuctions in the word "{Store.word}" is <strong>{Store.conjuct}</strong>
+          The number of conjuctions in the wordg "{Store.word}" is <strong>{Store.conjuct}</strong>
         </P>
       )}
       <Hr></Hr>

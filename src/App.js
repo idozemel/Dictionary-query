@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Components/Header/Header';
 
 import "./App.css";
-import LoadingPage from './screens/LoadingPage/LoadingPage';
+import LoadingPage from './Components/LoadingPage/LoadingPage';
 
 function App() {
  
